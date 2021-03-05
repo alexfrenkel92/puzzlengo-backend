@@ -1,4 +1,4 @@
-# A simple task list built with AdonisJS
+# Backend made with AdonisJS to provide auth for frontend
 
 ## Getting Started
 
