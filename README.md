@@ -2,16 +2,10 @@
 
 ## Getting Started
 
-Clone the project repository by running the command below if you use SSH
+Clone the project repository by running the command below
 
 ```
-git clone git@github.com:ammezie/adonis-tasks.git
-```
-
-If you use https, use this instead
-
-```
-git clone https://github.com/ammezie/adonis-tasks.git
+git clone https://github.com/alexfrenkel92/puzzlengo-backend.git
 ```
 
 ## Setup
@@ -21,18 +15,6 @@ Run the command below to install dependencies
 ```
 npm install
 ```
-
-
-### Browser download
-
-Since this repo relies on [puppeteer](https://github.com/GoogleChrome/puppeteer) for running tests, it requires a bundled `Chromium` version.
-
-The installation of **Chromium** may take a while and optionally you can skip it by running following command.
-
-```
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install
-```
-
 
 ### Environment variables
 
@@ -57,10 +39,20 @@ Run the following command to run migration.
 adonis migration:run
 ```
 
+Run the following command to generate APP_KEY.
+
+```
+adonis key:generate
+```
+
 Finally, start the application:
 
 ```
 adonis serve --dev
 ```
 
-and visit http://127.0.0.1:3333/ to see the application in action.
+OR
+
+```
+npm start
+```
