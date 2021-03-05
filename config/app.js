@@ -3,6 +3,20 @@
 const Env = use('Env')
 
 module.exports = {
+  
+  /*
+  |--------------------------------------------------------------------------
+  | Application Name
+  |--------------------------------------------------------------------------
+  |
+  | This value is the name of your application and can used when you
+  | need to place the application's name in a email, view or
+  | other location.
+  |
+  */
+
+  name: Env.get('APP_NAME', 'AdonisJs'),
+  
   /*
   |--------------------------------------------------------------------------
   | App Key
@@ -67,7 +81,6 @@ module.exports = {
     */
     jsonpCallback: 'callback',
 
-
     /*
     |--------------------------------------------------------------------------
     | Etag
@@ -79,20 +92,7 @@ module.exports = {
     | response.send('Hello', { ignoreEtag: true })
     |
     */
-    etag: true
-  },
-
-  views: {
-    /*
-    |--------------------------------------------------------------------------
-    | Cache Views
-    |--------------------------------------------------------------------------
-    |
-    | Define whether or not to cache the compiled view. Set it to true in
-    | production to optimize view loading time.
-    |
-    */
-    cache: Env.get('CACHE_VIEWS', true)
+    etag: false
   },
 
   static: {
@@ -137,16 +137,16 @@ module.exports = {
   locales: {
     /*
     |--------------------------------------------------------------------------
-    | Driver
+    | Loader
     |--------------------------------------------------------------------------
     |
-    | The driver to be used for fetching and updating locales. Below is the
+    | The loader to be used for fetching and updating locales. Below is the
     | list of available options.
     |
     | file, database
     |
     */
-    driver: 'file',
+    loader: 'file',
 
     /*
     |--------------------------------------------------------------------------

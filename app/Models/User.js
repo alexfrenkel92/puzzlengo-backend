@@ -1,19 +1,21 @@
 'use strict'
 
 const Model = use('Model')
+const Hash = use('Hash')
 
 class User extends Model {
   static boot () {
     super.boot()
 
     /**
-     * A hook to bash the user password before saving
+     * A hook to hash the user password before saving
      * it to the database.
-     *
-     * Look at `app/Models/Hooks/User.js` file to
-     * check the hashPassword method
      */
-    this.addHook('beforeCreate', 'User.hashPassword')
+    this.addHook('beforeSave', async userInstance => {
+      if (userInstance.dirty.password) {
+        userInstance.password = await Hash.make(userInstance.password)
+      }
+    })
   }
 
   /**
@@ -28,6 +30,13 @@ class User extends Model {
    */
   tokens () {
     return this.hasMany('App/Models/Token')
+  }
+
+  /**
+   * Hide password when user is fetched.
+   */
+  static get hidden () {
+    return ['password']
   }
 }
 
