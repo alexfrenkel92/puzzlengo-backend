@@ -1,6 +1,21 @@
 # Backend made with AdonisJS to provide auth for frontend
 
-## Getting Started
+## Frontend is deployed on the below link
+
+```
+https://puzzlengo.herokuapp.com/
+```
+
+## Login details
+
+Sign up to create a user profile or use the following sign in details:
+
+```
+E-mail: feles@gmail.com
+Password: elek
+```
+
+## Cloning this repo
 
 Clone the project repository by running the command below
 
